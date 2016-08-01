@@ -330,6 +330,9 @@ def main():
         for i in response_dict['responses']['GET_INVENTORY']['inventory_delta']['inventory_items']:#['responses']['GET_INVENTORY']['inventory_delta']['inventory_items']['inventory_item_data']['pokemon_data']:
             try:
                 stats = {}
+                attack = 0
+                defense = 0
+                stamina = 0
                 unique_id = int(i['inventory_item_data']['pokemon_data']['id'])
 
                 number = int(i['inventory_item_data']['pokemon_data']['pokemon_id'])
@@ -382,36 +385,6 @@ def main():
 
 
     file.close()
-
-
-    #sudo python pokecli.py -a google -u runawayturtl@gmail.com -p 13794693ds -l 37.336992,-121.939896
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
