@@ -210,7 +210,7 @@ def prettyTable(dictionary, cssClass=''):
         s.append('class="%s"' % (cssClass))
     s.append('>\n')
     for key, value in dictionary.iteritems():
-        if key != 'picture' or key != 'icon':
+        if key != 'picture' and key != 'icon':
             s.append('<tr>\n  <td valign="top"><strong>%s</strong></td>\n' % str(key))
         if isinstance(value, dict):
             if key == 'picture' or key == 'icon':
@@ -354,9 +354,11 @@ def main():
                     elong_num = str("00{}".format(str(number)))
                 elif number<100:
                     elong_num = str("0{}".format(str(number)))
+                else:
+                    elong_num = number
 
-                #picture = str("eternia.fr/public/media/go/sprites/{0}.png".format(elong_num))
-                picture = str("/sprites/{0}.png".format(elong_num))
+                picture = str("http://eternia.fr/public/media/go/sprites/{0}.png".format(elong_num))
+                #picture = str("/sprites/{0}.png".format(elong_num))
                 stats.update({'picture' : picture})
 
 
@@ -366,7 +368,6 @@ def main():
 
             except:
                 pass
-
 
 
         for j in all_my_pokemon:
